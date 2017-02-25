@@ -29,11 +29,13 @@
     function evaluateNutrition(count) {
       if (count) {
         $scope.message_type = "success";
+        $scope.input_validation_state = "has-success";
         return (count <=3 )
           ? "Enjoy!"
           :"Too Much!";
       } else {
         $scope.message_type = "danger";
+        $scope.input_validation_state = "has-error";
         return "Please enter data first";
       }
     }
