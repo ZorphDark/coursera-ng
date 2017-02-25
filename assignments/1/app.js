@@ -10,7 +10,6 @@
   function lunchCheckController($scope, $filter) {
     $scope.items = '';
     $scope.message = '';
-    $scope.message_type = "danger";
 
     $scope.checkIfTooMuch = function() {
       var count = countLunchItems($scope.items);
