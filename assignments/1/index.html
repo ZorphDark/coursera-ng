@@ -14,7 +14,7 @@
 </head>
 
 <body data-ng-app="LunchCheck">
-  <div class="container" data-ng-controller="LunchCheckController">
+  <form class="container" data-ng-controller="LunchCheckController">
     <h1>Lunch Checker</h1>
 
     <div class="form-group">
@@ -22,12 +22,12 @@
       <p class="help-block">Please note that empty items (i.e. ',, ,') are not considered towards to the count.</p>
     </div>
     <div class="form-group">
-      <button class="btn btn-default" data-ng-click="checkIfTooMuch()">Check If Too Much</button>
+      <button type="submit" class="btn btn-default" data-ng-click="checkIfTooMuch()">Check If Too Much</button>
     </div>
     <div data-ng-if="message" class="alert alert-{{message_type}}" role="alert">
       {{ message }}
     </div>
-  </div>
+  </form>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
   <script src="app.js"></script>
