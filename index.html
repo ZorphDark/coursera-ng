@@ -1,25 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf8">
-    <title>Coursera ng</title>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
-    <script src="app.js"></script>
-  </head>
+<head>
+  <meta charset="utf8">
+  <title>Coursera ng</title>
 
-  <body data-ng-app="app">
-    <h1>Coursera ng!!!</h1>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
 
-    <div data-ng-controller="viewerController">
-      <span data-ng-if="name">Hi {{ name }}, </span>please change your name <br>
-      <input type="text" name="name" 
-        data-ng-model="name"
-        data-ng-change="updateNumeric()"
-        data-ng-blur="upperName()">
-      <br><br>
-      <small>Total Numeric value of person's name is <b>{{ numeric }}</b></small>
-    </div>
+<body data-ng-app="app">
+  <h1>Coursera ng!!!</h1>
 
-  </body>
+  <div data-ng-controller="viewerController">
+    <span data-ng-if="name">Hi {{ name | loves }}, </span>please change your name <br>
+    <input type="text" name="name" data-ng-model="name" data-ng-change="updateNumeric()" data-ng-blur="upperName()">
+    <br><br>
+    <small>Total Numeric value of person's name is <b>{{ numeric }}</b></small>
+    <p>Cost: <b>{{ numeric | currency : "USD" }}</b></p>
+
+    <form data-ng-if="books">
+      <fieldset>
+        <legend>Searchbox</legend>
+        <input type="search" name="query" data-ng-model="query">
+        <ul>
+          <li data-ng-repeat="book in books | filter:query">{{ book.title }} by {{ book.author }}, {{ book.year }}</li>
+        </ul>
+      </fieldset>
+    </form>
+  </div>
+
+  <div data-ng-controller="parentCtrl as parent">
+    <div>titulo {{ parent.title }}</div>
+    <input type="text" ng-model="parent.title">
+
+      <div data-ng-controller="childCtrl as child">
+        <div>titulo {{ child.title }} de padre {{ parent.title }}</div>
+        <input type="text" data-ng-model="child.title">
+      </div>
+  </div>
+
+  
+
+</body>
+
 </html>
