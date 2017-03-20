@@ -2,7 +2,7 @@
   <li class="list-group-item" data-ng-repeat="item in items">
     <div class="media">
       <div class="media-body">
-        <h2 class="media-heading">{{ item.name }}</h2>
+        <h2 class="media-heading">{{ item.name }} ({{ item.short_name }})</h2>
         <dl>
           <dt data-ng-if="!item.small_portion_name || !item.large_portion_name">price</dt>
           <dt data-ng-if="item.small_portion_name">{{ item.small_portion_name }}</dt>
