@@ -9,10 +9,10 @@
     var nitdown = this;
 
     nitdown.getMenuItems = function() {
-      nitdown.userHasSearched = true;
       var menuItemsPromise = MenuSearchService.getMatchedMenuItems(nitdown.searchTerm);
       menuItemsPromise.then(function(result) {
         nitdown.found = result;
+        nitdown.userHasSearched = true;
       });
     }
     nitdown.removeMenuItem = function(index) {

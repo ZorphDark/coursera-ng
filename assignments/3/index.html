@@ -21,10 +21,11 @@
 
     <div class="clearfix"></div>
 
+    {{nitdown.items.length}}
     <!-- found-items should be implemented as a component -->
     <found-items found-items="nitdown.found" on-remove="nitdown.removeMenuItem(index)"></found-items>
 
-    <p data-ng-if="!items.length && nitdown.userHasSearched" class="alert alert-warning">Nothing found</p>
+    <p data-ng-if="!nitdown.found.length && nitdown.userHasSearched" class="alert alert-warning">Nothing found</p>
   </div>
   
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
