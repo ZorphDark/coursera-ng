@@ -16,7 +16,7 @@
   function CategoryItemsController(MenuDataService, categoryItemsData) {
     var items = this;
 
-    items.list = categoryItemsData.data.menu_items;
+    items.data = categoryItemsData.data;
   }
 
 })()

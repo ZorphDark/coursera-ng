@@ -1,7 +1,12 @@
-<h2><a ui-sref="categories">Back to categories</a></h2>
+<ol class="breadcrumb">
+  <li><a ui-sref="categories" class="active">&laquo; Categories</a></li>
+</ol>
+
+<h2>{{ items.data.category.name }}</h2>
+<p class="alert alert-warning" data-ng-if="items.data.category.special_instructions">{{ items.data.category.special_instructions }}</p>
 
 <ul>
-  <li data-ng-repeat="item in items.list">
+  <li data-ng-repeat="item in items.data.menu_items">
     <dl>
       <dt>Name</dt>
       <dd>{{ item.name }}</dd>
