@@ -1,0 +1,17 @@
+<h2><a ui-sref="categories">Back to categories</a></h2>
+
+<ul>
+  <li data-ng-repeat="item in items.list">
+    <dl>
+      <dt>Name</dt>
+      <dd>{{ item.name }}</dd>
+      <dt data-ng-if="!item.small_portion_name || !item.large_portion_name">Price</dt>
+      <dt data-ng-if="item.small_portion_name">{{ item.small_portion_name }} price</dt>
+      <dd data-ng-if="item.price_small">${{ item.price_small }}</dd>
+      <dt data-ng-if="item.large_portion_name">{{ item.large_portion_name }} price</dt>
+      <dd data-ng-if="item.price_large">${{ item.price_large }}</dd>
+      <dt data-ng-if="item.description">Description</dt>
+      <dd>{{ item.description }}</dd>
+    </dl>
+  </li>
+</ul>

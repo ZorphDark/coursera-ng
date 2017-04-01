@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Restaurant La Casa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body data-ng-app="MenuApp">
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Restaurant La Casa</h1>
+    </div>
+    
+    <ui-view></ui-view>
+
+
+
+     <!--<div class="tabs">
+      <a ui-sref="tab1" ui-sref-active="activeTab">Tab 1</a>
+      <a ui-sref="tab2" ui-sref-active="activeTab">Tab 2</a>
+    </div>-->
+
+
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+
+  <script src="scripts/menuapp.module.js"></script>
+  <script src="scripts/data.module.js"></script>
+  <script src="scripts/menudata.service.js"></script>
+  <script src="scripts/routes.js"></script>
+  <script src="scripts/categories/categories.component.js"></script>
+
+</body>
+
+</html>
