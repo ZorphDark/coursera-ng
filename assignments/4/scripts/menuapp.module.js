@@ -3,17 +3,17 @@
     .controller('MenuController', MenuController)
     .controller('CategoryItemsController', CategoryItemsController);
     
-  MenuController.$inject = ['MenuDataService', 'categoriesData'];
+  MenuController.$inject = ['categoriesData'];
 
-  function MenuController(MenuDataService, categoriesData) {
+  function MenuController(categoriesData) {
     var menu = this;
 
     menu.categories = categoriesData.data;
   }
 
-  CategoryItemsController.$inject = ['MenuDataService', 'categoryItemsData'];
+  CategoryItemsController.$inject = ['categoryItemsData'];
 
-  function CategoryItemsController(MenuDataService, categoryItemsData) {
+  function CategoryItemsController(categoryItemsData) {
     var items = this;
 
     items.data = categoryItemsData.data;
