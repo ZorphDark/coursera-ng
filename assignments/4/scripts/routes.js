@@ -4,12 +4,16 @@
 
   RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider']
   function RoutesConfig($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/categories');
+    $urlRouterProvider.otherwise('/home');
 
     $stateProvider
+      .state('home', {
+        url: '/home',
+        templateUrl: 'scripts/home.template.html'
+      })
       .state('categories', {
         url: '/categories',
-        templateUrl: 'scripts/home.template.html',
+        templateUrl: 'scripts/categories/categories.template.html',
         controller: 'MenuController as menu',
         resolve: {
           categoriesData: ['MenuDataService', function(MenuDataService) {
